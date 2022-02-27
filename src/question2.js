@@ -25,11 +25,17 @@ const Question2 = () => {
 
   return (
     <div>
+      Search here: &nbsp;
       <input value={value} onChange={(event) => onInputChange(event)} />
       <table>
         <tbody>
-          {list.filter(item => item.toLowerCase().includes(value.toLowerCase())).map(item =>
+          <tr style={{ backgroundColor: 'lightgray' }}>
+            <td>Order</td>
+            <td>Name</td>
+          </tr>
+          {list.filter(item => item.toLowerCase().includes(value.toLowerCase())).map((item, index) =>
             <tr key={item}>
+              <td>{index + 1}</td>
               <td>{item}</td>
             </tr>
           )}
